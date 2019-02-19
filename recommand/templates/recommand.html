@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+
+{% block contents %}
+<body>
+{% for recommand in recommands.all %}
+<h1>{{recommand.title}}</h1>
+<p>{{recommand.pub_date}}</p>
+<p>{{recommand.summary}}<a href="{% url 'detail' recommand.id %}">...more</a></p>
+{% endfor %}
+
+</body>
+{% endblock %}
