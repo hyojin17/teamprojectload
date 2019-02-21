@@ -142,5 +142,9 @@ STATICFILES_DIRS = [
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'etc', 'static')
 ]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'home', 'static')
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #static파일을 한 곳에 모음

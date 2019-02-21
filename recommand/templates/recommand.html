@@ -1,13 +1,64 @@
+
 {% extends 'base.html'%}
-
-
 {% block contents %}
+<head>
+    <style>
+    .center{
+        display: table; margin-left: auto; margin-right: auto; 
+    
+        font-size: 15px;
+    }
+    </style>
+</head>
 <body>
-{% for recommand in recommands.all %}
-<h1>{{recommand.title}}</h1>
-<p>{{recommand.pub_date}}</p>
-<p>{{recommand.summary}}<a href="{% url 'detail' recommand.id %}">...more</a></p>
-{% endfor %}
+<div class="center" style="margin-top:100px;">
+<table class="table table-hover" style="width:1000px;">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">TITLE</th>
+        <th scope="col">CONTENT</th>
+        <th scope="col">ID</th>
+        <th scope="col">TIME</th>
 
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for recommand in posts %}
+        <tr>
+        <th scope="row">{{recommand.number}}</th>
+        <td>{{recommand.title}}</td>
+        <td>{{recommand.summary}}</td>
+        <td>fffffffffffffff</td>
+        <td>{{recommand.pub_date}}</td>
+
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+
+
+
+<div class="center">
+    <nav aria-label="Page navigation example" style="font-size:10px;">
+        <ul class="pagination">
+            {% if posts.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{posts.previous_page_number}}">Previous</a></li>
+            {% endif %}
+            
+
+            <li class="page-item"><a class="page-link" href="#">{{ posts.number }}</a></li>
+            <li class="page-item"><a class="page-link" href="#">of</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{posts.paginator.num_pages}}">{{posts.paginator.num_pages}}</a></li>
+            {% if posts.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{posts.next_page_number}}">Next</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+</div>    
+</div>
 </body>
 {% endblock %}

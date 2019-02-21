@@ -1,13 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Recommand
 from django.utils import timezone
-
+from django.core.paginator import Paginator
 
 
 
 def recommand(request):
     recommands = Recommand.objects
-    return render(request, 'recommand.html', {'recommands': recommands})
+    recommand_list = Recommand.objects.all()
+    paginator = Paginator(recommand_list,5)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'recommand.html', {'recommands': recommands, 'posts':posts})
 
 def detail(request, recommand_id):
     details = get_object_or_404(Recommand, pk=recommand_id)
