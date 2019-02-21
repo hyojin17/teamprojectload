@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'recommand.apps.RecommandConfig',
     'accounts.apps.AccountsConfig',
+    'beauty.apps.BeautyConfig',
+    'enter.apps.EnterConfig',
+    'food.apps.FoodConfig',
+    'vlog.apps.VlogConfig',
+    'etc.apps.EtcConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +126,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'beauty', 'static')
+]
+#static이 있는 경로
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'food', 'static')
+]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'enter', 'static')
+]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'vlog', 'static')
+]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'etc', 'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#static파일을 한 곳에 모음
