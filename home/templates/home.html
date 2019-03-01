@@ -1,9 +1,12 @@
-{% extends 'base.html'%}
 
+
+{% extends 'base.html'%}
+{% load staticfiles %}
 
 {% block contents %}
 <body>
-<p>home입니다.</p>
+<img src="{% static 'home.gif' %}" alt="home">
+
 
 </body>
 

@@ -12,9 +12,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home.views.home, name="home"),
     path('notice/', home.views.notice, name="notice"),
+    path('notice/<int:notice_id>', home.views.ndetail, name="ndetail"),
+    
     path('recommand/', recommand.views.recommand, name="recommand"),
     path('recommand/', include('recommand.urls')),
     path('accounts/', include('accounts.urls')),
+    
     path('beauty/', beauty.views.beauty, name='beauty'),
     path('enter/', enter.views.enter, name='enter'),
     path('food/', food.views.food, name='food'),

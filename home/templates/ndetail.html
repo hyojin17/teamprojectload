@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+
+{% block contents %}
+<body>
+<h1>Show me the detail of Notice</h1>
+
+    <h1>제목 : {{ndetails.title}}</h1>
+    <p>날짜 : {{ndetails.pub_date}}</p>
+    <p>본문 : {{ndetails.body}}</p>
+
+</body>
+
+{% endblock %}

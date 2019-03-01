@@ -28,9 +28,9 @@
         {% for recommand in posts %}
         <tr>
         <th scope="row">{{recommand.number}}</th>
-        <td>{{recommand.title}}</td>
+        <td><a href="{% url 'detail' recommand.id %}" >{{recommand.title}}</a></td>
         <td>{{recommand.summary}}</td>
-        <td>fffffffffffffff</td>
+        <td>admin@email.com</td>
         <td>{{recommand.pub_date}}</td>
 
         </tr>
@@ -39,8 +39,9 @@
     </tbody>
 </table>
 
+        <a class="btn btn-primary" href="new/" role="button"style="float: right;">추천글 쓰러가기</a>
 
-
+<br><br>
 <div class="center">
     <nav aria-label="Page navigation example" style="font-size:10px;">
         <ul class="pagination">
