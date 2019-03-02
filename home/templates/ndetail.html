@@ -1,14 +1,29 @@
 {% extends 'base.html'%}
 
+<head>
+    <!--아이콘-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
 
 {% block contents %}
 <body>
-<h1>Show me the detail of Notice</h1>
+<br><br>
+    <div class="container">
+        <h1><i class="fas fa-exclamation-circle"></i> Detil Content</h1><hr>
+        
+        <div class="alert alert-danger" role="alert">
+            공지사항의 자세한 내용을 확인해보세요!
+        </div><br>
+        <!-- <h1><i class="fas fa-pencil-alt"></i> {{ndetails.title}}</h1><br>
+        <p> {{ndetails.pub_date}}</p><br> -->
+        <div class="jumbotron">
+            <h1 class="display-4"><i class="fas fa-pencil-alt"></i> {{ndetails.title}}</h1>
+            <p class="lead">{{ndetails.pub_date}}</p>
+            <hr class="my-4"><br><br>
+            <p>{{ndetails.body}}</p>
+          </div>
 
-    <h1>제목 : {{ndetails.title}}</h1>
-    <p>날짜 : {{ndetails.pub_date}}</p>
-    <p>본문 : {{ndetails.body}}</p>
-
+    </div>
 </body>
 
 {% endblock %}
