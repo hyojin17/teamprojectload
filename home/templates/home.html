@@ -1,13 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.min.css" rel="stylesheet">
 
-{% extends 'base.html'%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!--폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Gaegu|Hi+Melody|Poor+Story|Shadows+Into+Light+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <!--아이콘-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>PYCER</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        html{
+            background: cover no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+                        
+        }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      nav{
+        /* font-family: 'Gaegu', cursive; */
+        font-family: 'Press Start 2P', cursive;
+        font-size: 30px;
+      }
+
+      h1{
+        font-family: 'Gaegu', cursive;
+      }
+
+      /* p{
+         font-family: 'Hi Melody', cursive;
+      } */
+
+      h5{
+        font-family: 'Poor Story', cursive;
+        font-size: 26px;
+      }
+
+      h4, input{
+            font-family: 'Poor Story', cursive;
+        }
+    
+        a.navbar-brand{
+            font-family: 'Hi Melody', cursive;
+            /* font-family: 'Press Start 2P', cursive; */
+            font-size: 30px;
+        }
+
+        a.nav-link{
+          font-family: 'Press Start 2P', cursive;
+          font-size: 15px;
+        }
+
+        a.dropdown-item{
+          font-family: 'Press Start 2P', cursive;
+          font-size: 15px;
+        }
+        /*반응형 웹*/
+        /* #maindiv{
+            position: fixed; 
+            top: -50%; 
+            left: -50%; 
+            width: 200%; 
+            height: 200%;
+        }
+        #maindiv img{
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0;   
+            bottom: 0; 
+            margin: auto; 
+            min-width: 50%;
+            min-height: 50%;
+        } */
+        
+        #mainphoto{
+            /* Set rules to fill background */
+            min-height: 100%;
+            min-width: 1024px;
+                
+            /* Set up proportionate scaling */
+            width: 100%;
+            height: auto;
+                
+            /* Set up positioning */
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        @media screen and (max-width: 1024px) { /* Specific to this particular image */
+        #maindiv{
+            left: 50%;
+            margin-left: -512px;   /* 50% */
+        }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+</head>
+
 {% load staticfiles %}
-
-{% block contents %}
-<body>
-<img src="{% static 'home.gif' %}" alt="home">
-
-
+<body id="page-top">
+   
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style="background-color: none; z-index: 1000; ">
+    <!-- <nav class="navbar navbar-dark" style="background-color: #e3f2fd;"> -->
+        <a href="{% url 'home'%}"><img src="{% static 'logo.jpg' %}" height="30px" alt="로고" style="margin-right: 350px; margin-left: 15px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'notice' %}">NOTICE<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'recommand' %}">RECOMMAND</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CATEGORY
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'enter' %}">Entertainment</a>
+                <a class="dropdown-item" href="{% url 'beauty' %}">Beauty</a>
+                <a class="dropdown-item" href="{% url 'food'%}">Food</a>
+                <a class="dropdown-item" href="{% url 'vlog' %}">Vlog</a>
+                <a class="dropdown-item" href="{% url 'etc' %}">Etc.</a>
+                <!-- <a class="dropdown-item" href="{% url 'signup' %}">Signup</a>
+                <a class="dropdown-item" href="{% url 'login'%}">login</a>
+                <a class="dropdown-item" href="{% url 'logout'%}">logout</a> -->
+                <!-- <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a> -->
+                </div>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+            </li>
+            </ul>
+            <!--<form class="form-inline my-2 my-lg-0">
+            <a href="{% url 'login' %}"><button class="btn btn-outline-secondary my-2 my-sm-0">LOGIN</button></a>
+            </form>-->
+            <a href="{% url 'login'%}"><button type="button" class="btn btn-outline-warning">LOGIN</button></a>
+        </div>
+    </nav>
+    <main role="main">
+        <div id="maindiv">
+        <img src="{% static 'home.gif' %}" alt="home" id="mainphoto">
+        </div>
+    </main>
+    
+    
+            
 </body>
+</html>
 
-{% endblock %}
